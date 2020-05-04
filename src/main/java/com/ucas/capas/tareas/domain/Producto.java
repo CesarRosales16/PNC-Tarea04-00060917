@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 public class Producto {
 
 	@Size(min = 12, max = 12, message = "El codigo debe tener una longitud de 12.")
-	@Pattern(regexp = "[0-9]{11}[1-9]{1}", message = "El codigo debe estar formado solo por digitos.")
+	@Pattern(regexp = "[0-9]{11}[1-9]{1}", message = "El codigo debe estar formado solo por digitos y no todos pueden ser cero.")
 	String codigo;
 
 	@Size(min = 1, max = 100, message = "El nombre del producto debe tener una longitud entre 1 y 100 caracteres.")
@@ -18,7 +18,7 @@ public class Producto {
 	@Size(min = 1, max = 500, message = "La descripcion debe tener una longitud entre 1 y 500 caracteres.")
 	String descripcion;
 
-	@Pattern(regexp = "\\d+", message = "El stock debe sr un número sin decimales")
+	@Pattern(regexp = "\\d+", message = "El stock debe ser un número sin decimales")
 	String existencias;
 
 	@Pattern(regexp = "^(1[0-2]|0[1-9])/(3[01]|[12][0-9]|0[1-9])/[0-9]{4}$", message = "La fecha debe seer en formato dd/mm/aaaa")
